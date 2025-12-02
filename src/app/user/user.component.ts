@@ -1,3 +1,4 @@
+import { DUMMY_USERS } from './../dummy-users';
 import {
   Component,
   computed,
@@ -21,12 +22,19 @@ export class UserComponent {
 
   // select = output<string>();
 
-  id = input.required<string>();
-  avatar = input.required<string>();
-  name = input.required<string>();
-  imagePath = computed(() => 'assets/users/' + this.avatar());
+  user = input.required<{
+    id: string;
+    avatar: string;
+    name: string;
+  }>();
+
+  // id = input.required<string>();
+  // avatar = input.required<string>();
+  // name = input.required<string>();
+
+  imagePath = computed(() => 'assets/users/' + this.user().avatar);
 
   onSelectUser() {
-    this.select.emit(this.id());
+    this.select.emit(this.user().id);
   }
 }
