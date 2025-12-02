@@ -1,4 +1,3 @@
-import { DUMMY_USERS } from './../dummy-users';
 import {
   Component,
   computed,
