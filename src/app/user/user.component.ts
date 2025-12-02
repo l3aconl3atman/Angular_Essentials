@@ -8,6 +8,18 @@ import {
   Output,
 } from '@angular/core';
 
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// };
+
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -22,11 +34,7 @@ export class UserComponent {
 
   // select = output<string>();
 
-  user = input.required<{
-    id: string;
-    avatar: string;
-    name: string;
-  }>();
+  user = input.required<User>();
 
   // id = input.required<string>();
   // avatar = input.required<string>();
