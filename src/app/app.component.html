@@ -9,5 +9,9 @@
     }
   </ul>
 
-  <app-tasks [name]="selectedUser?.name" [avatar]="selectedUser?.avatar" />
+  @if (selectedUser) {
+  <app-tasks [name]="selectedUser.name" [avatar]="selectedUser.avatar" />
+  } @else {
+  <p>Please select a user to view task.</p>
+  }
 </main>
