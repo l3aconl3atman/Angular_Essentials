@@ -36,9 +36,21 @@ export class TasksComponent {
         'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
     },
+    {
+      id: 't4',
+      userId: 'u7',
+      title: 'Fellatio request',
+      summary:
+        'Client has agreed to meet at 10pm on September 3rd to have his dick suck for $100',
+      dueDate: '2024-09-03',
+    },
   ];
 
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId == this.userId());
+  }
+
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 }
