@@ -2,6 +2,7 @@ import {
   Component,
   computed,
   EventEmitter,
+  Input,
   input,
   output,
   Output,
@@ -19,6 +20,7 @@ import { type User } from './user.model';
 export class UserComponent {
   // @Input() avatar!: string;
   // @Input() name!: string;
+  @Input({ required: true }) selected!: boolean;
   @Output() select = new EventEmitter<string>();
 
   // select = output<string>();
