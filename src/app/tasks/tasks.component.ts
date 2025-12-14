@@ -21,7 +21,7 @@ export class TasksComponent {
   /* private tasksService = new TasksService(); // Wrong method */
 
   get selectedUserTasks() {
-    return this.tasksService.getUserTasks;
+    return this.tasksService.getUserTasks(this.userId());
   }
 
   onCompleteTask(id: string) {}
@@ -30,11 +30,7 @@ export class TasksComponent {
     this.isAddingTask = true;
   }
 
-  exitAddTask() {
-    this.isAddingTask = false;
-  }
-
-  onSubmitTask(taskData: NewTaskData) {
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 }
