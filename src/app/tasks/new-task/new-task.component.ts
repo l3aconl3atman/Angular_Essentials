@@ -17,4 +17,6 @@ export class NewTaskComponent {
   onExitAddTask() {
     this.exitAddTask.emit();
   }
+
+  onSubmit() {}
 }
